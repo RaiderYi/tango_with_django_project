@@ -8,6 +8,9 @@
     <body>
         <h1>Add a Category</h1>
         <div>
+            <a href="/rango/category/{{category.slug}}/add_page/">Add Page</a><br />
+        </div>
+        <div>
             <form id="category_form" method="post" action="/rango/add_category/">
                 {% csrf_token %}
                 {% for hidden in form.hidden_fields %}
