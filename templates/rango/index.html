@@ -4,8 +4,12 @@
 		Rango
 	{% endblock %}
 {% block body_block %}
-        <h1>Rango says...</h1>
-        <div>hey there partner!</div>
+        {% if user.is_authenticated %}
+            <h1>Rango says... hello {{ user.username }}!</h1>
+        {% else %}
+            <h1>hey there partner!</h1>
+        {% endif %}
+
 
         <div>
         {% if categories %}
