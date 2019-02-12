@@ -2,12 +2,12 @@
 {% load staticfiles %}
 {% block title_block %}
 		Rango
-	{% endblock %}
+{% endblock %}
 {% block body_block %}
         {% if user.is_authenticated %}
-            <h1>Rango says... hello {{ user.username }}!</h1>
+            howdy {{ user.username }}!
         {% else %}
-            <h1>hey there partner!</h1>
+            hey there partner!
         {% endif %}
 
 
