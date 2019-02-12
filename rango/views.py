@@ -3,6 +3,7 @@ from rango.models import Category
 from rango.models import Page
 from rango.forms import CategoryForm
 from rango.forms import PageForm
+
 # Create your views here
 from django.http import HttpResponse
 '''def index(request):
