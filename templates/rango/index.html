@@ -5,13 +5,17 @@
 {% endblock %}
 {% block body_block %}
         {% if user.is_authenticated %}
-            howdy {{ user.username }}!
+        <h1>Rango says...
+            hello {{ user.username }}!</h1>
         {% else %}
-            hey there partner!
+        <h1>Rango says...
+            hey there partner!</h1>
         {% endif %}
 
-
         <div>
+            <div>
+				<h3>Most Liked Categories</h3>
+			</div>
         {% if categories %}
         <ul>
             {% for category in categories %}
@@ -22,13 +26,20 @@
             <strong>There are no categories present. </strong>
         {% endif %}
         </div>
+<div>
+        <h3>Most Viewed Pages</h3>
+</div>
+	    {% if pages %}
+	        <ul>
+	        {% for page in pages %}
+	           <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+	         {% endfor %}
+	        </ul>
+	    {% else %}
+	        <strong>There are no categories present.</strong>
+	    {% endif %}
         <div>
-            <a href="/rango/add_category/">Add a New Category</a><br />
-        </div>
-
-        <div>
-            <a href="/rango/about/">About Rango</a><br />
-            <img src="/static/images/rango.jpg"
-                 alt="Rango： A Green Lizard" />
+        <a href="{% url 'about' %}">About Rango</a><br />
+        <img src="/static/images/rango.jpg"  alt="Rango： A Green Lizard" />
         </div>
 {% endblock %}
