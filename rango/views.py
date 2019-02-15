@@ -81,9 +81,9 @@ def show_category(request,category_name_slug):
         context_dict['category'] = None
         context_dict['pages']=None
 
-    return render(request, 'rango/category.html',context=context_dict)
+    return render(request,'rango/category.html',context=context_dict)
 
-def add_category(request ):
+def add_category(request):
 
     form = CategoryForm()
 
@@ -91,7 +91,8 @@ def add_category(request ):
         form = CategoryForm(request.POST)
 
         if form.is_valid():
-            category=form.save(commit=True)
+            cat=form.save(commit=True)
+            print(cat,cat.slug,cat.name)
 
             return index(request)
         else:
