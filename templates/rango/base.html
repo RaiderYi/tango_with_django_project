@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load rango_template_tags %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -16,6 +17,11 @@
             {% endblock %}
         </div>
         <hr />
+        <div>
+            {% block sidebar_block %}
+                {% get_category_list category%}
+            {% endblock %}
+        </div>
         <div>
             <ul>
             {% if user.is_authenticated %}

@@ -6,12 +6,13 @@
 {% endblock %}
 
 {% block body_block%}
+<p>visits: {{ visits }}</p>
             <div>
                 This tutorial has been put together by Shijie Fang<br />
                 <strong>{{ boldmessage }}</strong><br />
             </div>
             <div>
-                <img src="/media/cat.jpg"
+                <img src="{{MEDIA_URL}}cat.jpg"
                   alt="Rango：Cat" />
             </div>
 

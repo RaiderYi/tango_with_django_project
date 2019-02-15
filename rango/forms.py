@@ -46,7 +46,6 @@ class UserProfileForm(forms.ModelForm):
         model = UserProfile
         fields = ('website','picture')
 
-
     class Meta:
         model = UserProfile
         exclude = ('user',)
